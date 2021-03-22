@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_0fnw5vs" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="Accesslevel" name="Authorize">
+    <extensionElements>
+      <biodi:bounds x="150" y="150" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="resources">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>resources</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1rqn79m" label="resourcetype">
+        <inputExpression id="LiteralExpression_016sarj" typeRef="string">
+          <text>resourcetype</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="admin" name="Admin" typeRef="string" />
+      <output id="OutputClause_0vdltyr" label="developer" name="Developer" typeRef="string" />
+      <output id="OutputClause_16m831c" label="user" name="Standard User" typeRef="string" />
+      <output id="OutputClause_06hgt34" label="guest" name="Guest" typeRef="string" />
+      <rule id="DecisionRule_544733">
+        <inputEntry id="UnaryTests_295205">
+          <text>"camunda"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_239104">
+          <text>"Screen"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_281721">
+          <text>'
+            {"camunda":[{"Admin":{"value":true},"Developer":{"value":false},"User":{"value":false},"Guest":{"value":false}}],"test-page":[{"Admin":{"value":false},"Developer":{"value":true},"User":{"value":false},"Guest":{"value":false}}],"sample-page":[{"Admin":{"value":false},"Developer":{"value":false},"User":{"value":true},"Guest":{"value":false}}]}
+          '</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_907082">
+          <text>'
+             {"camunda":[{"Admin":{"value":true},"Developer":{"value":false},"User":{"value":false},"Guest":{"value":false}}],"test-page":[{"Admin":{"value":false},"Developer":{"value":true},"User":{"value":false},"Guest":{"value":false}}],"sample-page":[{"Admin":{"value":false},"Developer":{"value":false},"User":{"value":true},"Guest":{"value":false}}]}
+          '</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_022809">
+          <text>'
+              {"camunda":[{"Admin":{"value":true},"Developer":{"value":false},"User":{"value":false},"Guest":{"value":false}}],"test-page":[{"Admin":{"value":false},"Developer":{"value":true},"User":{"value":false},"Guest":{"value":false}}],"sample-page":[{"Admin":{"value":false},"Developer":{"value":false},"User":{"value":true},"Guest":{"value":false}}]}
+          '</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_367085">
+          <text>'
+              {"camunda":[{"Admin":{"value":true},"Developer":{"value":false},"User":{"value":false},"Guest":{"value":false}}],"test-page":[{"Admin":{"value":false},"Developer":{"value":true},"User":{"value":false},"Guest":{"value":false}}],"sample-page":[{"Admin":{"value":false},"Developer":{"value":false},"User":{"value":true},"Guest":{"value":false}}]}
+          '</text>
+        </outputEntry>
+      </rule>
+       
+<rule id="DecisionRule_838224">
+        <inputEntry id="UnaryTests_588890">
+          <text>"test-page"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_998686">
+          <text>"Screen"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_295902">
+          <text>'
+            {"camunda":[{"Admin":{"value":true},"Developer":{"value":false},"User":{"value":false},"Guest":{"value":false}}],"test-page":[{"Admin":{"value":false},"Developer":{"value":true},"User":{"value":false},"Guest":{"value":false}}],"sample-page":[{"Admin":{"value":false},"Developer":{"value":false},"User":{"value":true},"Guest":{"value":false}}]}
+          '</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_432984">
+          <text>'
+             {"camunda":[{"Admin":{"value":true},"Developer":{"value":false},"User":{"value":false},"Guest":{"value":false}}],"test-page":[{"Admin":{"value":false},"Developer":{"value":true},"User":{"value":false},"Guest":{"value":false}}],"sample-page":[{"Admin":{"value":false},"Developer":{"value":false},"User":{"value":true},"Guest":{"value":false}}]}
+          '</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_993619">
+          <text>'
+              {"camunda":[{"Admin":{"value":true},"Developer":{"value":false},"User":{"value":false},"Guest":{"value":false}}],"test-page":[{"Admin":{"value":false},"Developer":{"value":true},"User":{"value":false},"Guest":{"value":false}}],"sample-page":[{"Admin":{"value":false},"Developer":{"value":false},"User":{"value":true},"Guest":{"value":false}}]}
+          '</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_464864">
+          <text>'
+              {"camunda":[{"Admin":{"value":true},"Developer":{"value":false},"User":{"value":false},"Guest":{"value":false}}],"test-page":[{"Admin":{"value":false},"Developer":{"value":true},"User":{"value":false},"Guest":{"value":false}}],"sample-page":[{"Admin":{"value":false},"Developer":{"value":false},"User":{"value":true},"Guest":{"value":false}}]}
+          '</text>
+        </outputEntry>
+      </rule>
+       
+<rule id="DecisionRule_441207">
+        <inputEntry id="UnaryTests_900757">
+          <text>"sample-page"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_198537">
+          <text>"Screen"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_497185">
+          <text>'
+            {"camunda":[{"Admin":{"value":true},"Developer":{"value":false},"User":{"value":false},"Guest":{"value":false}}],"test-page":[{"Admin":{"value":false},"Developer":{"value":true},"User":{"value":false},"Guest":{"value":false}}],"sample-page":[{"Admin":{"value":false},"Developer":{"value":false},"User":{"value":true},"Guest":{"value":false}}]}
+          '</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_971935">
+          <text>'
+             {"camunda":[{"Admin":{"value":true},"Developer":{"value":false},"User":{"value":false},"Guest":{"value":false}}],"test-page":[{"Admin":{"value":false},"Developer":{"value":true},"User":{"value":false},"Guest":{"value":false}}],"sample-page":[{"Admin":{"value":false},"Developer":{"value":false},"User":{"value":true},"Guest":{"value":false}}]}
+          '</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_036005">
+          <text>'
+              {"camunda":[{"Admin":{"value":true},"Developer":{"value":false},"User":{"value":false},"Guest":{"value":false}}],"test-page":[{"Admin":{"value":false},"Developer":{"value":true},"User":{"value":false},"Guest":{"value":false}}],"sample-page":[{"Admin":{"value":false},"Developer":{"value":false},"User":{"value":true},"Guest":{"value":false}}]}
+          '</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_916909">
+          <text>'
+              {"camunda":[{"Admin":{"value":true},"Developer":{"value":false},"User":{"value":false},"Guest":{"value":false}}],"test-page":[{"Admin":{"value":false},"Developer":{"value":true},"User":{"value":false},"Guest":{"value":false}}],"sample-page":[{"Admin":{"value":false},"Developer":{"value":false},"User":{"value":true},"Guest":{"value":false}}]}
+          '</text>
+        </outputEntry>
+      </rule>
+       
+           </decisionTable>
+  </decision>
+</definitions>
